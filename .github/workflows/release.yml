@@ -21,7 +21,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v3
 
-      - name: Descargar Alex's Mobs y Jade (Modrinth, 1.20.1 Forge)
+      - name: Descargar Alex's Mobs, Alex's Caves y Jade (Modrinth, 1.20.1 Forge)
         run: |
           set -euo pipefail
           UA="capitan-salchichon/alexs-egg-timer (github actions)"
@@ -38,6 +38,7 @@ jobs:
             curl -fsSL -A "$UA" -o "libs/${out}" "$url"
           }
           fetch alexs-mobs alexsmobs-1.0.jar
+          fetch alexs-caves alexscaves-1.0.jar
           fetch jade jade-1.0.jar
           ls -la libs
 

@@ -6,7 +6,7 @@ license="MIT"
 modId="alexs_egg_timer"
 version="1.0.0"
 displayName="Alex's Egg Timer"
-description='''Hace que los huevos de Alex's Mobs (cocodrilo, caimán, ornitorrinco, terrapin y triops) tengan un tiempo de eclosión real y lo muestra en Jade.'''
+description='''Hace que los huevos de Alex's Mobs (cocodrilo, caimán, ornitorrinco, terrapin, triops) y de Alex's Caves (dinosaurios) tengan un tiempo de eclosión real y lo muestra en Jade. Cada mod es opcional.'''
 
 [[dependencies.alexs_egg_timer]]
     modId="forge"
@@ -24,8 +24,15 @@ description='''Hace que los huevos de Alex's Mobs (cocodrilo, caimán, ornitorri
 
 [[dependencies.alexs_egg_timer]]
     modId="alexsmobs"
-    mandatory=true
+    mandatory=false
     versionRange="[1.22.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.alexs_egg_timer]]
+    modId="alexscaves"
+    mandatory=false
+    versionRange="[2.0.0,)"
     ordering="AFTER"
     side="BOTH"
 

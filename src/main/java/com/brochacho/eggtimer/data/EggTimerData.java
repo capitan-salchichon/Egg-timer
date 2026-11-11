@@ -116,7 +116,7 @@ public class EggTimerData extends SavedData {
                 timers.remove(key);
                 continue;
             }
-            if (!kind.hasHabitat(level, pos)) {
+            if (!kind.hasHabitat(level, pos, state)) {
                 timers.put(key, 100); // sin hábitat: pausado, reintenta cada 5 s
                 continue;
             }

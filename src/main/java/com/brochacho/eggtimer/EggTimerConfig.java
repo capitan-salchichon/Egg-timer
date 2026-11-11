@@ -8,6 +8,7 @@ public final class EggTimerConfig {
     public static final ForgeConfigSpec.IntValue REPTILE_TICKS;
     public static final ForgeConfigSpec.IntValue TERRAPIN_TICKS;
     public static final ForgeConfigSpec.IntValue TRIOPS_TICKS;
+    public static final ForgeConfigSpec.IntValue CAVES_DINO_TICKS;
 
     static {
         ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
@@ -19,6 +20,8 @@ public final class EggTimerConfig {
                 .defineInRange("terrapinEggHatchTicks", 9000, 60, 1_728_000);
         TRIOPS_TICKS = b.comment("Ticks de eclosión de huevos de triops (una sola etapa).")
                 .defineInRange("triopsEggHatchTicks", 7800, 20, 1_728_000);
+        CAVES_DINO_TICKS = b.comment("Ticks totales de eclosión de los huevos de dinosaurio de Alex's Caves. Se divide en 3 etapas. (El random tick original tardaba ~80000 ticks de media.)")
+                .defineInRange("cavesDinosaurEggHatchTicks", 36000, 60, 1_728_000);
         SPEC = b.build();
     }
 

@@ -2,7 +2,7 @@ package com.brochacho.eggtimer;
 
 import com.brochacho.eggtimer.data.EggTimerData;
 import com.brochacho.eggtimer.net.EggNetwork;
-import com.github.alexthe666.alexsmobs.block.BlockTriopsEggs;
+import com.brochacho.eggtimer.compat.AlexsMobsSupport;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
@@ -37,16 +37,16 @@ public final class EggTimers {
     public static boolean shouldCancelRandomTick(ServerLevel level, BlockPos pos, BlockState state) {
         if (!EggTimerConfig.ENABLED.get() || forceGrow) return false;
         EggKind kind = EggKind.of(state);
-        if (kind != null && kind != EggKind.TRIOPS) {
-            // huevos que ya existían antes del addon: se registran la primera vez que reciben random tick
-            EggTimerData.get(level).registerIfAbsent(pos, kind.stageTicks());
-        }
+        if (kind == null || kind == EggKind.TRIOPS) return false; // bloque que no gestionamos (p. ej. huevo de Tremorzilla)
+        // huevos que ya existían antes del addon: se registran la primera vez que reciben random tick
+        EggTimerData.get(level).registerIfAbsent(pos, kind.stageTicks());
         return true;
     }
 
     /** Llamado desde FrogspawnBlock.onPlace (HEAD). true = cancelar el scheduleTick original. */
     public static boolean triopsOnPlace(Level level, BlockPos pos, Block block) {
-        if (!EggTimerConfig.ENABLED.get() || !(block instanceof BlockTriopsEggs) || !(level instanceof ServerLevel sl)) {
+        if (!EggTimerConfig.ENABLED.get() || !EggKind.mobsLoaded() || !AlexsMobsSupport.isTriops(block)
+                || !(level instanceof ServerLevel sl)) {
             return false;
         }
         int delay = EggKind.TRIOPS.totalTicks();

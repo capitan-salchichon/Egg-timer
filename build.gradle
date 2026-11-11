@@ -58,8 +58,9 @@ dependencies {
     // Citadel (requerido por Alex's Mobs) - mismo archivo que usa el repo de Alex's Mobs
     implementation fg.deobf('curse.maven:citadel-331936:5633260')
 
-    // Estos dos los pones tú en ./libs (ver README)
+    // Estos los pones tú en ./libs (ver README)
     implementation fg.deobf('local:alexsmobs:1.0')
+    implementation fg.deobf('local:alexscaves:1.0')
     implementation fg.deobf('local:jade:1.0')
 }
 
