@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.brochacho.eggtimer.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "alexs_egg_timer.refmap.json",
+  "mixins": [
+    "ReptileEggMixin",
+    "TerrapinEggMixin",
+    "FrogspawnMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

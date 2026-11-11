@@ -1,0 +1,6 @@
+{
+  "tooltip.alexs_egg_timer.hatch_in": "Hatches in: %s",
+  "tooltip.alexs_egg_timer.hatching": "Hatching...",
+  "tooltip.alexs_egg_timer.calculating": "Hatch time: calculating...",
+  "config.jade.plugin_alexs_egg_timer.egg_timer": "Egg hatch timer"
+}

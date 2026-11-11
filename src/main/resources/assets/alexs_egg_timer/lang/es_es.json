@@ -1,0 +1,6 @@
+{
+  "tooltip.alexs_egg_timer.hatch_in": "Eclosiona en: %s",
+  "tooltip.alexs_egg_timer.hatching": "Eclosionando...",
+  "tooltip.alexs_egg_timer.calculating": "Tiempo de eclosión: calculando...",
+  "config.jade.plugin_alexs_egg_timer.egg_timer": "Temporizador de eclosión de huevos"
+}
